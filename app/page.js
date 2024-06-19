@@ -1,94 +1,72 @@
-import Image from "next/image";
+
 import styles from "./page.module.css";
+import { projects } from './components/data';
+import { Link } from 'next-view-transitions'
+import ThemeSwitch from "./components/ThemeSwitch";
 
 export default function Home() {
   return (
     <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>app/page.js</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
+      <div className={styles.nav}>
+      <div className={styles.wrapper}>
+    <ThemeSwitch className={styles.name}/>
+    <span className={styles.arrowNav}></span>
+  </div>
+        <p className={styles.title}>Software Engineer</p>
+        
+      </div>
+      <div className={styles.info}>
+        <p className={styles.header}>Info</p>
+        <p>Hello, I'm Joonas, a Finnish software engineer and front-end developer living in Helsinki. I am passionate about technology, gaming and crafting solid and smooth experiences.</p>
+      </div>
+      <div className={styles.projects}>
+        <p className={styles.header}>Selected projects</p>
+            <div className={styles.projectWrapper}>
+                {projects.map((project, index) => (
+                    <Link key={index} href={`${project.id}`} >
+                            <div className={styles.project}>
+                                <span className={styles.arrow}></span>
+                                <p className={styles.projectName}>{project.name}</p>
+                                <img className={styles.image} src={`${project.src[0]}`}></img>
+                            </div>                       
+                    </Link>
+                ))}
+            </div>
+      </div>
+      <div className={styles.customDiv}>
+        {/* This div will span the third column */}
+        <div className={styles.revealTrigger}></div>
+        <img src="J0nssi_solo.png" alt="me" />
+        
+      </div>
+      <div className={styles.more}>
+        <p className={styles.header}>More</p>
+        <div className={styles.projectWrapper}>
+          <a href="mailto:joonas.vaija@hotmail.com" >
+            <div className={styles.project}>
+              <span className={styles.arrow}></span>
+              <p className={styles.projectName}>Mail</p>
+            </div>
+          </a>
+          <a href="https://www.linkedin.com/in/joonas-vaija/" target="_blank">
+            <div className={styles.project}>
+              <span className={styles.arrow}></span>
+              <p className={styles.projectName}>Linkedin</p>
+            </div>
+          </a>
+          <a href="https://github.com/J0nssi" target="_blank">
+            <div className={styles.project}>
+              <span className={styles.arrow}></span>
+              <p className={styles.projectName}>Github</p>
+            </div>
+          </a>
+          <a href="JoonasVaija_CV.pdf" target="_blank">
+            <div className={styles.project}>
+              <span className={styles.arrow}></span>
+              <p className={styles.projectName}>Resume</p>
+            </div>
           </a>
         </div>
-      </div>
-
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className={styles.grid}>
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p>Explore starter templates for Next.js.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
       </div>
     </main>
   );
