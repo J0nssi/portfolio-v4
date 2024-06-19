@@ -17,7 +17,7 @@ export default function Home() {
       </div>
       <div className={styles.info}>
         <p className={styles.header}>Info</p>
-        <p>Hello, I&aposm Joonas, a Finnish software engineer and front-end developer living in Helsinki. I am passionate about technology, gaming and crafting solid and smooth experiences.</p>
+        <p>Hello, I&apos;m Joonas, a Finnish software engineer and front-end developer living in Helsinki. I am passionate about technology, gaming and crafting solid and smooth experiences.</p>
       </div>
       <div className={styles.projects}>
         <p className={styles.header}>Selected projects</p>
