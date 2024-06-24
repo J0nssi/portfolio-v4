@@ -1,110 +1,75 @@
 .main {
-  display: flex;
-  height: 100vh;
-  font-weight: 200;
+  padding: 3em;
 }
 
-.left {
-  width: 50vw;
-  padding: 2em; /* Add padding to the left side */
-  box-sizing: border-box;
-  overflow-y: auto; /* Enable vertical scrolling if content exceeds viewport height */
+.top {
+  margin-top: 12em;
 }
 
-.right {
-  flex: 1;
+.projectHeader {
   display: flex;
-  flex-direction: column;
-  position: relative; /* Make the right section relative for absolute positioning */
-  padding-left: 8em;
-  padding-top: 2em;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem; /* Adjust margin as needed */
 }
 
 .projectName {
-  font-size: 48px; /* Adjust font size as needed */
-  margin-bottom: 1em;
-  font-weight: 300;
-}
-
-.rightContent {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr); /* Divide into 4 columns */
-  gap: 2em;
-  flex-grow: 1; /* Allow it to take up remaining space */
-}
-
-.column {
-  display: flex;
-  flex-direction: column;
-}
-
-.column h3 {
-  margin: 1em 0 0 0; /* Small bottom margin to keep the header close to the paragraph */
-  font-size: 26px;
+  font-size: 10rem; /* Example font size, adjust as needed */
   font-weight: 400;
+  margin: 0; /* Remove default margin */
 }
 
-.column p {
-  margin: 0 0 1em 0; /* Small bottom margin to create gap before the next header */
-  font-size: 20px;
+.projectIndex > div {
+  text-align: right; /* Adjust spacing between elements */
+  font-size: 3rem;
+}
+
+.columns {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* Four columns */
+  margin-top: 5em;
+}
+
+.infoColumn {
+  grid-column: 1;
+}
+
+.columnContent {
+  display: grid;
+  gap: 10px; /* Adjust gap between items */
+}
+
+.item {
+  display: grid;
+}
+
+.descriptionColumn {
+  grid-column: 2 / span 4;
+}
+
+.descriptionColumn p{
+  font-size: 3em;
+}
+
+.divider {
+  margin: 2em 0; /* Adjust margin above and below the divider */
+  border: 1px solid #ccc; /* Divider line style */
+  opacity: 50%;
 }
 
 .visitButton {
-  position: absolute;
-  bottom: 3em;
-  left: 8em;
-  display: flex;
-  align-items: center;
-  cursor: pointer;
-}
-
-.closeButton {
-  position: absolute;
-  top: 3em;
-  right: 3em;
-  display: flex;
-  align-items: center;
-  cursor: pointer;
-}
-
-.nextButton {
-  position: absolute;
-  bottom: 3em;
-  right: 3em;
-  display: flex;
-  align-items: center;
-  cursor: pointer;
-}
-.imgContainer {
-  max-width: 100%;
-  height: auto;
-  margin-bottom: 2em;
-  transition: transform 0.5s ease; /* Ensure smooth movement transition */
-}
-
-.left::-webkit-scrollbar {
-  width: 0;
-}
-
-.projectWrapper {
-  display: grid;
-}
-
-.project {
   position: relative;
-  display: flex;
-  align-items: center;
-  text-decoration: none;
-  color: inherit;
-  padding-top: 2px;
-  padding-bottom: 2px;
+  font-size: 36px;
+  display: inline-block; /* Display as inline block to fit content width */
+  position: absolute;
+  right: 1.5em;
 }
 
 .projectLink {
   position: relative;
-  cursor: pointer;
-  transition: transform 0.3s ease;
-  font-size: 28px; /* Increase font size for buttons */
+  text-decoration: none;
+  display: block;
+  transition: transform 0.2s ease;
 }
 
 .arrow {
@@ -129,138 +94,45 @@
   }
 }
 
-.closeButton:hover .arrow,
-.nextButton:hover .arrow ,
-.visitButton:hover .arrow  {
-  display: block;
+.visitButton:hover .arrow {
+  display: block; /* Show the arrow on hover */
 }
 
-.projectLink {
-  transition: transform 0.3s ease;
-  font-size: 28px;
-}
-
-.closeButton:hover .projectLink,
-.nextButton:hover .projectLink,
 .visitButton:hover .projectLink {
   transform: translateX(5px);
 }
 
-.name {
-  animation: blink 5s infinite;
+.bottom {
+  margin-top: 6em; /* Adjust margin as needed */
 }
 
-.name:hover {
-  opacity: 1;
-  animation-play-state: paused;
+.imageContainer {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  margin-top: 5em;
 }
 
-@keyframes blink {
-  1%, 3%, 5%, 7% {
-    opacity: 0.5;
-  }
-  0%, 2%, 4%, 6%, 8% {
-    opacity: 1;
-  }
+.imageNumber {
+  grid-column: 1 / span 1; /* Image number spans first column */
+  font-size: 18px; /* Adjust font size as needed */
 }
 
-
-@media (max-width: 1300px) {
-  .main {
-    flex-direction: column; /* Stack items vertically */
-    overflow-x: auto; /* Enable horizontal scrolling on smaller screens if needed */
-    overflow-y: auto; /* Ensure vertical scrolling is still enabled */
-  }
-
-  .left {
-    width: 100%; /* Full viewport width */
-    height: calc(100vw / 1.777); /* Calculate height based on aspect ratio (1920x1080 = 1.777) */
-    overflow-x: auto; /* Enable horizontal scrolling */
-    overflow-y: hidden; /* Hide vertical scrolling */
-    display: flex;
-    align-items: flex-end; /* Align items to the bottom */
-    justify-content: flex-start; /* Start from the left */
-    box-sizing: border-box; /* Include padding in width calculation */
-    order: 2; /* Move carousel to the bottom */
-    padding: 0; /* Remove all padding */
-    margin: 0; /* Remove all margin */
-  }
-
-  .imgContainer {
-    max-width: 100%; /* Ensure images take full viewport width */
-    height: 100%; /* Ensure images take full height of container */
-    margin-right: 2em; /* Remove any right margin */
-    margin-bottom: 1em; /* Remove any bottom margin */
-  }
-
-  .left::-webkit-scrollbar {
-    display: none; /* Hide scrollbar for horizontal scrolling */
-  }
-
-  .right {
-    padding: 1em; /* Add padding around text */
-    order: 1; /* Move text content to the top */
-  }
-
-  .visitButton,
-  .closeButton,
-  .nextButton {
-    position: absolute;
-    display: flex;
-    align-items: center;
-    cursor: pointer;
-  }
-
-  .closeButton {
-    top: 1em; /* Adjust top position */
-    right: 1em; /* Adjust right position */
-  }
-
-  .nextButton {
-    bottom: 1em; /* Adjust bottom position */
-    right: 1em; /* Adjust right position */
-  }
-
-  .visitButton {
-    bottom: 1em; /* Adjust bottom position */
-    left: 1em; /* Adjust left position */
-  }
-
-  .projectLink {
-    font-size: 24px; /* Adjust font size */
-  }
-
-  .column h3 {
-    font-size: 24px;
-  }
-  
-  .column p {
-    font-size: 20px;
-  }
+.imgContainer {
+  grid-column: 2 / span 4; /* Image spans across columns 2, 3, and 4 */
+  width: 100%; /* Ensures image takes full width of its container */
 }
 
-@media (max-width: 767px) {
-  .rightContent {
-    grid-template-columns: repeat(2, 1fr); /* Adjust to two columns */
-    gap: 1em; /* Reduce gap between text elements */
-  }
+.nextSection {
+  padding-top: 5em;
+}
 
-  .projectLink {
-    font-size: 20px; /* Adjust font size */
-  }
+.nextButton {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  /* Your next button styles */
+}
 
-  .projectName {
-    font-size: 28px;
-  }
-
-  .column h3 {
-    margin-top: 0.5em; /* Reduce top margin for headings */
-    margin-bottom: 0.5em; /* Reduce bottom margin for headings */
-    font-size: 20px;
-  }
-
-  .column p {
-    margin-bottom: 0.5em; /* Reduce bottom margin for paragraphs */
-    font-size: 16px;
-  }
+.nextButton .projectLink{
+  font-size: 160px;
 }

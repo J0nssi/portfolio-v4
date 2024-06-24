@@ -25,7 +25,6 @@ export default function Home() {
               <div className={styles.project}>
                 <span className={styles.arrow}></span>
                 <p className={styles.projectName}>{project.name}</p>
-                <img className={styles.image} src={`${project.src[0]}`} alt={`Project ${project.name}`}></img>
               </div>
             </Link>
           ))}
