@@ -1,8 +1,8 @@
 // pages/projects/[id]/page.js
 
 import { notFound } from 'next/navigation';
-import { projects } from '../components/data'; // Adjust the import path as needed
-import ProjectClient from '../components/ProjectClient';
+import { projects } from '../../components/data'; // Adjust the import path as needed
+import ProjectClient from '../../components/ProjectClient';
 
 export async function generateStaticParams() {
     return projects.map((project) => ({

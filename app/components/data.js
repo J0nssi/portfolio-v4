@@ -11,17 +11,6 @@ export const projects = [
         href: "https://www.incoach.fi"
     },
     {
-        id: 'portfolio_v3',
-        name: "Portfolio V3",
-        client: "Myself",
-        description: "Everybody was talking about ShadcnUI so I had to hop on too and made a new Portfolio for myself.",
-        src: ["/incoach1.png", "/incoach2.png", "/incoach3.png"],
-        role: "UI/UX Designer, Frontend Developer",
-        year: 2023,
-        category: "Design and Development",
-        href: "https://joonasvaija.fi"
-    },
-    {
         id: 'vilkkufillarit',
         name: "Vilkku-fillarit",
         client: "Vilkku-fillarit, Kuopio city",
@@ -31,6 +20,17 @@ export const projects = [
         year: 2022,
         category: "Development",
         href: "https://fillaridata.savonia.fi"
+    },
+    {
+        id: 'portfolio_v3',
+        name: "Portfolio V3",
+        client: "Myself",
+        description: "Everybody was talking about ShadcnUI so I had to hop on too and made a new Portfolio for myself.",
+        src: ["/incoach1.png", "/incoach2.png", "/incoach3.png"],
+        role: "UI/UX Designer, Frontend Developer",
+        year: 2023,
+        category: "Design and Development",
+        href: "https://joonasvaija.fi"
     },
     {
         id: 'portfolio_v2',

@@ -2,6 +2,109 @@
   padding: 3em;
 }
 
+.nav {
+  position: sticky;
+  top: 0;
+  font-size: 20px;
+  text-decoration: none;
+  padding: 1em;
+  align-items: center;
+  display: grid;
+  width: 100%;
+  display: flex; /* Use flexbox for layout */
+  align-items: center;
+  justify-content: space-between; /* Space out items */
+  width: 100%;
+}
+
+.homeButton:hover .arrow {
+  display: block; /* Show the arrow on hover */
+}
+
+.homeButton:hover .home {
+  transform: translateX(5px);
+}
+
+.homeButton {
+  align-items: center;
+  transition: transform 0.2s ease;
+  position: relative;
+  width: max-content;
+  margin-left: auto;
+}
+
+.wrapper{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  align-items: center;
+  width: 100%;
+}
+
+.name {
+  grid-column: 1; /* First column */
+  animation: blink 5s infinite;
+  margin-left: 1em;
+}
+
+.title {
+  grid-column: 2 / 4; /* Second column */
+}
+
+.home{
+  grid-column: 4;
+  transition: transform 0.2s ease;
+}
+
+
+.name:hover {
+  opacity: 1;
+  animation-play-state: paused;
+}
+
+@keyframes blink {
+  1%, 3%, 5%, 7% {
+    opacity: 0.5;
+  }
+  0%, 2%, 4%, 6%, 8% {
+    opacity: 1;
+  }
+}
+
+.wrapper {
+  position: relative;
+}
+
+.wrapper:hover .arrowNav {
+  animation: bounceAndDisappear 1s ease infinite;
+}
+
+.arrowNav {
+  position: absolute;
+  left: -20px; /* Adjust this value to position the arrow */
+  top: 50%; /* Center the arrow vertically */
+  transform: translateY(-50%);
+  width: 10px;
+  height: 10px;
+  background-color: var(--foreground); /* Adjust the color as needed */
+  clip-path: polygon(100% 50%, 0 0, 0 100%);
+  z-index: 10;
+  margin-left: 1em;
+}
+
+@keyframes bounceAndDisappear {
+   10%, 110% {
+    transform: translateX(-2px) translateY(-50%);
+  }
+  60%{
+    transform: translateX(2px) translateY(-50%);
+  }
+}
+
+.project:hover .arrow {
+  display: block; /* Show the arrow on hover */
+}
+
+
 .top {
   margin-top: 12em;
 }
@@ -21,7 +124,7 @@
 
 .projectIndex > div {
   text-align: right; /* Adjust spacing between elements */
-  font-size: 3rem;
+  font-size: 48px;
 }
 
 .columns {
@@ -48,7 +151,7 @@
 }
 
 .descriptionColumn p{
-  font-size: 3em;
+  font-size: 48px;
 }
 
 .divider {
@@ -61,8 +164,6 @@
   position: relative;
   font-size: 36px;
   display: inline-block; /* Display as inline block to fit content width */
-  position: absolute;
-  right: 1.5em;
 }
 
 .projectLink {
@@ -135,4 +236,50 @@
 
 .nextButton .projectLink{
   font-size: 160px;
+}
+
+@media screen and (max-width: 768px) {
+  .descriptionColumn p{
+    font-size: 22px;
+  }
+  .main {
+    padding: 1em;
+  }
+  .descriptionColumn {
+    padding-left: 3em;
+  }
+  .projectName{
+    font-size: 36px;
+  }
+  .projectIndex > div {
+    font-size: 20px;
+  }
+  .top{
+    margin-top: 6em;
+  }
+  .visitButton {
+    position: relative;
+    font-size: 24px;
+    display: inline-block; /* Display as inline block to fit content width */
+    position: absolute;
+    right: 1em;
+  }
+  .imageContainer {
+    margin-top: 2em;
+  }
+  .nextButton .projectLink{
+    font-size: 48px;
+  }
+  .nav{
+    padding: 1em 1em;
+  }
+  .arrowNav{
+    display: none;
+  }
+  .title{
+    display: none;
+  }
+  .home{
+    justify-self: end;
+  }
 }

@@ -1,39 +1,36 @@
 import styles from "./page.module.css";
 import { projects } from './components/data';
 import { Link } from 'next-view-transitions'
-import ThemeSwitch from "./components/ThemeSwitch";
+import { MdOutlineArrowOutward } from "react-icons/md";
+
 
 export default function Home() {
   return (
     <main className={styles.main}>
-      <div className={styles.nav}>
-        <div className={styles.wrapper}>
-          <ThemeSwitch className={styles.name}/>
-          <span className={styles.arrowNav}></span>
-        </div>
-        <p className={styles.title}>Software Engineer</p>
-      </div>
       <div className={styles.info}>
         <p className={styles.header}>Info</p>
         <p>Hello, I&apos;m Joonas, a Finnish software engineer and front-end developer living in Helsinki. I am passionate about technology, gaming and crafting solid and smooth experiences.</p>
+        <div className={styles.button}>
+          <MdOutlineArrowOutward className={styles.buttonArrow} />
+          <p className={styles.buttonText}><Link href="/about">Read more</Link></p>
+        </div>
       </div>
       <div className={styles.projects}>
         <p className={styles.header}>Selected projects</p>
         <div className={styles.projectWrapper}>
-          {projects.map((project, index) => (
-            <Link key={index} href={`${project.id}`} >
+          {projects.slice(0, 3).map((project, index) => (
+            <Link key={index} href={`/projects/${project.id}`} >
               <div className={styles.project}>
                 <span className={styles.arrow}></span>
                 <p className={styles.projectName}>{project.name}</p>
               </div>
             </Link>
-          ))}
+          ))}   
         </div>
-      </div>
-      <div className={styles.customDiv}>
-        {/* This div will span the third column */}
-        <div className={styles.revealTrigger}></div>
-        <img src="J0nssi_solo.png" alt="me" />
+        <div className={styles.button}>
+            <MdOutlineArrowOutward className={styles.buttonArrow} />
+            <p className={styles.buttonText}><Link href="/projects">Show all</Link></p>
+          </div>
       </div>
       <div className={styles.more}>
         <p className={styles.header}>More</p>

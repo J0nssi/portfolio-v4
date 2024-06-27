@@ -72,7 +72,7 @@ const ProjectClient = ({ project, projects }) => {
         ))}
         <div className={styles.nextSection}>
           <h3>Next project</h3>
-          <Link href={`/${nextProject.id}`} passHref>
+          <Link href={`/projects/${nextProject.id}`} passHref>
             <div className={styles.nextButton}>
               <span className={styles.arrow}></span>
               <p className={styles.projectLink}>/{nextProject.name}</p>
