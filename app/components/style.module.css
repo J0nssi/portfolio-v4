@@ -1,5 +1,5 @@
 .main {
-  padding: 3em;
+  padding: 10em;
 }
 
 .nav {
@@ -9,12 +9,16 @@
   text-decoration: none;
   padding: 1em;
   align-items: center;
-  display: grid;
   width: 100%;
   display: flex; /* Use flexbox for layout */
-  align-items: center;
   justify-content: space-between; /* Space out items */
-  width: 100%;
+  background: linear-gradient(
+    to bottom,
+    var(--background),
+    var(--background) 80%,
+    transparent
+  );  
+  z-index: 99;
 }
 
 .homeButton:hover .arrow {
@@ -38,6 +42,7 @@
   grid-template-columns: repeat(4, 1fr);
   align-items: center;
   width: 100%;
+  margin-bottom: 10px;
 }
 
 .name {
@@ -211,16 +216,32 @@
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   margin-top: 5em;
+  gap: 10px;
 }
 
 .imageNumber {
   grid-column: 1 / span 1; /* Image number spans first column */
   font-size: 18px; /* Adjust font size as needed */
+  margin-right: 2em;
 }
 
 .imgContainer {
   grid-column: 2 / span 4; /* Image spans across columns 2, 3, and 4 */
   width: 100%; /* Ensures image takes full width of its container */
+}
+
+.lineWrapper {
+  display: flex;
+  margin-bottom: 1em; /* Adjust spacing between the line and image */
+}
+
+.line {
+  flex-shrink: 0;
+  width: 40%;
+  height: 1px; /* Height of the line */
+  background-color: var(--foreground); /* Color of the line */
+  margin-top: 10px;
+  opacity: 50%;
 }
 
 .nextSection {
@@ -236,6 +257,21 @@
 
 .nextButton .projectLink{
   font-size: 160px;
+}
+
+@media screen and (max-width: 1024px) {
+  .main{
+    padding: 2em;
+  }
+  .nextButton .projectLink{
+    font-size: 120px;
+  }
+  .imageNumber {
+    margin-right: 1em;
+  }
+  .columns {
+    gap: 20px;
+  }
 }
 
 @media screen and (max-width: 768px) {
@@ -261,8 +297,6 @@
     position: relative;
     font-size: 24px;
     display: inline-block; /* Display as inline block to fit content width */
-    position: absolute;
-    right: 1em;
   }
   .imageContainer {
     margin-top: 2em;
@@ -271,7 +305,14 @@
     font-size: 48px;
   }
   .nav{
-    padding: 1em 1em;
+    padding: 1em 0;
+    display: flex;
+    justify-content: space-between; /* Distribute space between items */
+    align-items: center; /* Align items vertically */
+    flex-wrap: wrap;
+  }
+  .name{
+    white-space: nowrap;
   }
   .arrowNav{
     display: none;
@@ -279,7 +320,11 @@
   .title{
     display: none;
   }
-  .home{
-    justify-self: end;
+  .homeButton {
+    grid-column: 4;
+    padding-right: 1em;
+  }
+  .imageNumber {
+    margin-right: 0.5em;
   }
 }

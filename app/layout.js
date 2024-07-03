@@ -16,7 +16,7 @@ export default function RootLayout({ children }) {
     <ViewTransitions>
       <html lang="en">
           <body className={inter.className}>  
-            <ThemeProvider>
+            <ThemeProvider defaultTheme="dark" attribute="class">
             <Nav/>
                 {children}
             </ThemeProvider> 

@@ -10,27 +10,55 @@
   .top {
     display: flex;
     /* Other styles */
+    width: 80%;
+    margin: 0 auto;
     height: 100vh;
+    padding-top: 5em;
   }
   
-  .left {
-    flex: 1;
-    /* Other styles */
+  .top .left {
+    flex: 0 0 50%;
+    position: relative;
+    display: flex; /* Ensures its children respect the flex properties */
+    align-items: center; /* Centers items vertically */
+  }
+
+  .left .image {
+    max-width: 100%; /* Limit image to its container width */
+    max-height: 75vh; /* Limit image to its container height */
+    width: auto; /* Allow width to adjust proportionally */
+    height: auto; /* Maintain aspect ratio */
+    object-fit: cover; /* Maintain aspect ratio and cover the container */
+    z-index: 1;
   }
   
-  .right {
-    flex: 1;
-    /* Other styles */
+  .top .right {
+    flex: 0 0 25%;
+    padding-top: 10em;
+    flex-direction: column;
+    width: 30%;
+  }
+
+  .headerTop {
+    padding-top: 2em;
+  }
+
+  .right p{
+    padding-top: 2em;
+    line-height: 1.5;
   }
   
-  .bottom {
+  .middle {
     /* Your existing styles */
+    display: flex;
+    justify-content: center;
   }
 
   .header{
     display: flex;
     flex-direction: row;
     align-items: center; /* Align items vertically */
+    padding-top: 1em;
   }
 
   .header p {
@@ -38,7 +66,7 @@
   }
   
   .accordion {
-    width: 100%;
+    min-width: 80%;
   }
   
   .accordionItem {
@@ -47,8 +75,11 @@
   .accordionItem:first-of-type {
     border-top: 1px solid var(--foreground);
   }
-  
-  
+
+  .accordionButton p {
+    font-size: 32px; /* Adjust the size as needed */
+}
+ 
   .accordionButton {
     background-color: transparent;
     cursor: pointer;
@@ -57,7 +88,7 @@
     border: none;
     text-align: left;
     outline: none;
-    font-size: 15px;
+    font-size: 14px;
     transition: background-color 0.4s ease;
     position: relative;
     display: flex;
@@ -66,17 +97,22 @@
   }
   
   .accordionContent {
-    padding: 0 4em;
-    display: none;
+    padding: 0 5em;
     overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.4s ease;
   }
-  
+
+  .accordionContent > p:last-child{
+    padding-bottom: 2em;
+  }
+
   .accordionContent p {
     padding: 12px;
   }
   
   .active {
-    display: block;
+    max-height: 1000px;
   }
   
   .plusMinus {
@@ -102,14 +138,291 @@
     transform: rotate(90deg);
   }
   
-  .horizontal {
-    transform: rotate(0deg);
-  }
-  
   .rotate .vertical {
     transform: rotate(180deg);
   }
-  
-  .rotate .horizontal {
-    transform: rotate(0deg);
+
+  .bottom {
+    max-width: 80%;
+    padding-top: 10em;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin: 0 auto;
+    padding-bottom: 10em;
   }
+
+  .bottom .left{
+    padding-right: 6em;
+  }
+
+  .bottom .left h1{
+    font-size: 48px;
+    padding-bottom: 1em;
+  }
+
+  .bottom .left p{
+    padding-right: 12em;
+    line-height: 1.5;
+  }
+
+  .image{
+    object-fit: contain;
+  }
+
+  .bottom .right{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .dark .image {
+    filter: invert(100%);
+}
+
+  .dropCap::first-letter {
+    font-size: 3em; /* Adjust size as needed */
+    float: left;
+    line-height: 0.8;
+    padding-right: 0.1em; /* Space between the drop cap and the rest of the text */
+    font-weight: bold;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.accordionContent {
+  padding: 0 1em;
+}
+
+.header h3 {
+  font-size: 16px;
+}
+
+.header p {
+  font-size: 12px;
+  margin: 0; /* Remove any default margins */
+}
+
+.accordionContent p {
+  padding: 12px;
+}
+
+.right h1 {
+  font-size: 24px; /* Adjust font size as needed */
+}
+
+.right p {
+  line-height: 1.6; /* Adjust line height for readability */
+  margin-bottom: 1em; /* Add some bottom margin for spacing */
+}
+
+.bottom {
+  min-width: 80%;
+  padding-top: 6em; /* Increased padding to avoid clipping */
+  display: grid;
+  flex-direction: column;
+  margin: 0 auto;
+}
+
+.bottom .left {
+  padding-right: 2em;
+  padding-top: 2em;
+}
+
+.bottom .left h1 {
+  font-size: 38px; /* Slightly increased font size */
+  padding-bottom: 1em;
+}
+
+.bottom .left p {
+  padding-bottom: 0;
+  line-height: 1.5;
+}
+
+.bottom .image {
+  object-fit: contain;
+  width: 100%;
+  margin-top: 0em; /* Adjusted margin to prevent clipping */
+}
+
+@media screen and (max-width: 1024px) {
+  .main{
+    padding: 2em;
+  }
+  
+  .top {
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      height: auto; /* Adjust height for proper fit */
+      padding-bottom: 4em;
+  }
+
+  .top .header {
+      margin: 0;
+      justify-content: center;
+      font-size: 36px;
+  }
+
+  .top .left,
+  .top .right {
+      flex: 1 1 auto; /* Reset the flex property */
+      width: 100%; /* Ensure they take full width */
+      position: relative;
+      display: flex;
+      justify-content: center; /* Center content horizontally */
+      align-items: center; /* Center content vertically */
+  }
+
+  .left img {
+      width: 60%;
+      height: auto; /* Let height adjust according to aspect ratio */
+      display: block;
+      max-height: 75vh; /* Reduced max-height to prevent clipping */
+      object-fit: cover;
+  }
+
+  .top .right {
+      width: 100%; /* Take full width */
+      padding: 0; /* Add horizontal padding to keep text away from edges */
+    }
+
+  .accordionContent {
+      padding: 0 2em;
+  }
+
+  .header h3 {
+      font-size: 18px; /* Slightly increased font size */
+  }
+
+  .header p {
+      font-size: 14px; /* Slightly increased font size */
+      margin: 0; /* Remove any default margins */
+  }
+
+  .accordionContent p {
+      padding: 12px;
+  }
+
+  .right h1 {
+      font-size: 26px; /* Slightly increased font size */
+  }
+
+  .right p {
+      line-height: 1.6; /* Adjust line height for readability */
+      margin-bottom: 1em; /* Add some bottom margin for spacing */
+  }
+
+  .bottom {
+      max-width: 100%;
+      padding-top: 6em; /* Increased padding to avoid clipping */
+      display: grid;
+      flex-direction: column;
+      margin: 0 auto;
+  }
+
+  .bottom .left p {
+    padding-right: 2em;
+  }
+  
+  .bottom .image {
+      object-fit: contain;
+      width: 100%;
+      margin-top: 0em; /* Adjusted margin to prevent clipping */
+  }
+}
+
+
+
+@media screen and (max-width: 768px) {
+  .top {
+    flex-direction: column;
+    align-items: center;
+    padding-top: 0; /* Adjust padding as needed */
+    width: 100%;
+    height: auto; /* Adjust height for proper fit */
+    padding-bottom: 4em;
+  }
+
+  .top .header {
+    margin: 0;
+    justify-content: center;
+  }
+
+  .top .left,
+  .top .right {
+    flex: 1 1 auto; /* Reset the flex property */
+    width: 100%; /* Ensure they take full width */
+    position: relative;
+    display: flex;
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
+  }
+
+  .left img {
+    width: 100vw;
+    height: auto; /* Let height adjust according to aspect ratio */
+    display: block;
+    max-height: 80vh; /* Ensure the image fits within the viewport height */
+    object-fit: cover;
+  }
+
+  .top .right {
+    width: 100%; /* Take full width */
+    padding: 0 1em; /* Add horizontal padding to keep text away from edges */
+  }
+
+  .accordionContent {
+    padding: 0 1em;
+  }
+
+  .header h3{
+    font-size: 16px;
+  }
+
+  .header p{
+    font-size: 12px;
+    margin: 0; /* Remove any default margins */
+  }
+  
+  .accordionContent p {
+    padding: 12px;
+  }
+
+  .right h1 {
+    font-size: 24px; /* Adjust font size as needed */
+  }
+
+  .right p {
+    line-height: 1.6; /* Adjust line height for readability */
+    margin-bottom: 1em; /* Add some bottom margin for spacing */
+  }
+
+  .bottom {
+    max-width: 100%;
+    padding-top: 5em;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    padding-bottom: 0;
+  }
+
+  .bottom .left {
+    padding-right: 0;
+  }
+
+  .bottom .left h1 {
+    font-size: 36px;
+    padding-bottom: 1em;
+  }
+
+  .bottom .left p {
+    padding: 0;
+    line-height: 1.5;
+  }
+
+  .image {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    padding-top: 2em;
+  }
+}

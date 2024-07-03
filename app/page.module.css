@@ -9,8 +9,7 @@
 
 .info, .projects, .more {
   grid-column: 2 / 3; /* Place in the second column */
-  margin-top: 4rem; /* Add margin to the top of each item */
-  padding-top: 1em;
+  margin-top: 5rem; /* Add margin to the top of each item */
   font-size: 20px;
 }
 
@@ -196,5 +195,9 @@
 
   .info, .projects, .more {
     grid-column: 1 / -1; /* Span the entire column */
+  }
+
+  .info, .projects, .more {
+    margin-top: 3rem; /* Add margin to the top of each item */
   }
 }

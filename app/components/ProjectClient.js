@@ -43,7 +43,6 @@ const ProjectClient = ({ project, projects }) => {
             </div>
           </div>
           <div className={styles.descriptionColumn}>
-            <h3>Description:</h3>
             <p>{project.description}</p>
             <hr className={styles.divider} />
             <div className={styles.visitButton}>
@@ -58,7 +57,11 @@ const ProjectClient = ({ project, projects }) => {
       <div ref={containerRef} className={styles.bottom}>
         {project.src.map((imageSrc, index) => (
           <div key={index} className={styles.imageContainer}>
-            <div className={styles.imageNumber}>00{index + 1}</div>
+            <div className={styles.lineWrapper}>
+              <div className={styles.imageNumber}>00{index + 1}</div>
+              <div className={styles.line}></div>
+            </div>
+            
             <div className={styles.imgContainer}>
               <Image
                 src={imageSrc}
