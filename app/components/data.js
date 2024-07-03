@@ -30,7 +30,7 @@ export const projects = [
         role: "UI/UX Designer, Frontend Developer",
         year: 2023,
         category: "Design and Development",
-        href: "https://joonasvaija.fi"
+        href: "https://portfolio-v3-chi-ten.vercel.app"
     },
     {
         id: 'portfolio_v2',
