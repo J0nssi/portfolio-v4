@@ -52,28 +52,35 @@
   .projectYear {
     grid-column: 4;
     justify-self: end;
-    transition: transform 0.3s ease;
+    transition: transform 0.4s ease;
+  }
+  
+  .projectItem {
+    position: relative;
+    overflow: hidden; /* Ensure that the pseudo-element doesn't overflow */
+    z-index: 0;
   }
   
   .projectItem::before {
     content: '';
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    top: 50%;
+    left: 50%;
+    width: 200%;
+    height: 200%;
     background-color: var(--foreground);
-    z-index: -1; /* Place the pseudo-element behind the content */
-    transform: translateY(-100%);
-    transition: transform 0.3s ease-in-out;
+    z-index: -1;
+    transform: translate(-50%, -50%) scaleY(0);
+    transform-origin: center;
+    transition: transform 0.4s ease-in-out;
   }
   
   .projectItem:hover::before {
-    transform: translateY(0);
+    transform: translate(-50%, -50%) scaleY(1);
   }
-
+  
   .projectItem:hover {
-    color: var(--background); /* Change font color on hover */
+    color: var(--background);
   }
   
 

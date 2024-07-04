@@ -47,7 +47,7 @@ export const projects = [
         id: 'osrs',
         name: "OSRS Utility App",
         client: "School Project",
-        description: "Created a OSRS Utility mobile app with friends. You can view item prices and search for user stats by nickname.",
+        description: "Created an OSRS Utility mobile app with friends. You can view item prices and search for user stats by nickname.",
         src: ["/OSRS1.jpg", "/OSRS4.jpg", "/OSRS3.jpg"],
         role: "Frontend Developer",
         year: 2021,
