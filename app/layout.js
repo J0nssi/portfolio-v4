@@ -15,6 +15,9 @@ export default function RootLayout({ children }) {
       <html lang="en">
           <body className={inter.className}>  
             <ThemeProvider defaultTheme="dark" attribute="class">
+            <div className="loadingScreen">
+              <h1>Joonas Vaija</h1>
+            </div>
             <Nav/>
                 {children}
             </ThemeProvider> 
