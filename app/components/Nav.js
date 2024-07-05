@@ -2,7 +2,7 @@
 import React from 'react';
 import ThemeSwitch from './ThemeSwitch';
 import styles from './style.module.css';
-import { Link } from 'next-view-transitions';
+import { TransitionLink } from './TransitionLink';
 
 export default function Nav() {
   return (
@@ -13,9 +13,9 @@ export default function Nav() {
         <p className={styles.title}>Software Engineer</p>
         <div className={styles.homeButton}>
           <span className={styles.arrow}></span>
-          <Link href="/" passHref>
+          <TransitionLink href="/" overlayText="Home" passHref>
             <p className={styles.home}>HOME</p>
-          </Link>
+          </TransitionLink>
         </div>
       </div>
     </div>

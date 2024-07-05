@@ -2,7 +2,7 @@
 import React, { useRef, useEffect } from 'react';
 import styles from './style.module.css';
 import Image from 'next/image';
-import { Link } from 'next-view-transitions';
+import { TransitionLink } from './TransitionLink';
 
 const ProjectClient = ({ project, projects }) => {
   const containerRef = useRef(null);
@@ -75,12 +75,12 @@ const ProjectClient = ({ project, projects }) => {
         ))}
         <div className={styles.nextSection}>
           <h3>Next project</h3>
-          <Link href={`/projects/${nextProject.id}`} passHref>
+          <TransitionLink overlayText={nextProject.name} animationClass="swipe-right-to-left" href={`/projects/${nextProject.id}`} passHref>
             <div className={styles.nextButton}>
               <span className={styles.arrow}></span>
               <p className={styles.projectLink}>/{nextProject.name}</p>
             </div>
-          </Link>
+          </TransitionLink>
         </div>
       </div>
     </div>

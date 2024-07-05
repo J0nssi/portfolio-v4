@@ -1,7 +1,7 @@
 import styles from "./page.module.css";
 import { projects } from './components/data';
-import { Link } from 'next-view-transitions'
 import { MdOutlineArrowOutward } from "react-icons/md";
+import { TransitionLink } from "./components/TransitionLink";
 
 
 export default function Home() {
@@ -12,24 +12,24 @@ export default function Home() {
         <p>Hello, I&apos;m Joonas, a Finnish software engineer and front-end developer living in Helsinki. I am passionate about technology, gaming and crafting solid and smooth experiences.</p>
         <div className={styles.button}>
           <MdOutlineArrowOutward className={styles.buttonArrow} />
-          <p className={styles.buttonText}><Link href="/about">Read more</Link></p>
+          <p className={styles.buttonText}><TransitionLink href="/about">Read more</TransitionLink></p>
         </div>
       </div>
       <div className={styles.projects}>
         <p className={styles.header}>Selected projects</p>
         <div className={styles.projectWrapper}>
           {projects.slice(0, 3).map((project, index) => (
-            <Link key={index} href={`/projects/${project.id}`} >
+            <TransitionLink overlayText={project.name} animationClass="swipe-right-to-left" key={index} href={`/projects/${project.id}`} >
               <div className={styles.project}>
                 <span className={styles.arrow}></span>
                 <p className={styles.projectName}>{project.name}</p>
               </div>
-            </Link>
+            </TransitionLink>
           ))}   
         </div>
         <div className={styles.button}>
             <MdOutlineArrowOutward className={styles.buttonArrow} />
-            <p className={styles.buttonText}><Link href="/projects">Show all</Link></p>
+            <p className={styles.buttonText}><TransitionLink href="/projects">Show all</TransitionLink></p>
           </div>
       </div>
       <div className={styles.more}>
