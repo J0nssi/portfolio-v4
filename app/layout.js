@@ -1,7 +1,6 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from 'next-themes'
-import { ViewTransitions } from 'next-view-transitions'
 import Nav from "./components/Nav";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -13,7 +12,6 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <ViewTransitions>
       <html lang="en">
           <body className={inter.className}>  
             <ThemeProvider defaultTheme="dark" attribute="class">
@@ -22,6 +20,5 @@ export default function RootLayout({ children }) {
             </ThemeProvider> 
           </body>
       </html>
-    </ViewTransitions>
   );
 }
