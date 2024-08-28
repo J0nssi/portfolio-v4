@@ -25,7 +25,7 @@ export default function Page() {
                 <div className={styles.left}>
                     <Image
                     className={styles.image}
-                    src="/J0nssi_solo.png" // Fill the parent container
+                    src="/omakuva.jpg" // Fill the parent container
                     width={1920}  // Set appropriate width
                     height={1080}
                     objectFit="cover"  // Maintain aspect ratio
