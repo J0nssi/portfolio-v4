@@ -9,7 +9,7 @@ export default function Home() {
     <main className={styles.main}>
       <div className={styles.info}>
         <p className={styles.header}>Info</p>
-        <p>Hello, I&apos;m Joonas, a Finnish software engineer and front-end developer living in Helsinki. I am passionate about technology, gaming and crafting solid and smooth experiences.</p>
+        <p>Hello, I&apos;m Joonas, a Finnish software engineer living in Helsinki. I am crafting solid and smooth experiences with with TypeScript, C# and Python.</p>
         <div className={styles.button}>
           <MdOutlineArrowOutward className={styles.buttonArrow} />
           <p className={styles.buttonText}><TransitionLink href="/about">Read more</TransitionLink></p>
