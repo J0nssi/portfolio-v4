@@ -7,7 +7,7 @@
   font-weight: 200;
 }
 
-.info, .projects, .more {
+.info, .projects, .more, .work {
   grid-column: 2 / 3; /* Place in the second column */
   margin-top: 5rem; /* Add margin to the top of each item */
   font-size: 20px;
@@ -25,6 +25,14 @@
 .info {
   grid-row: 2; /* Place in the second row */
   position: relative;
+}
+
+.social{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-top: 1em;
+  padding-bottom: 1em;
 }
 
 .button {
@@ -57,8 +65,18 @@
   animation: none;
 }
 
+.work{
+  grid-row: 3; /* Place in the second row */
+  position: relative;
+}
+
+.time{
+  font-style: italic;
+  font-size: 16px;
+}
+
 .projects {
-  grid-row: 3; /* Place in the third row */
+  grid-row: 4; /* Place in the third row */
   margin-top: 5em;
 }
 
@@ -154,14 +172,6 @@
     display: grid;
 }
 
-.more {
-  grid-row: 4; /* Place in the last row */
-  margin-bottom: 2em;
-  display: flex;
-  flex-direction: column;
-  margin-top: 5em;
-}
-
 .header{
   padding-bottom: 2em;
   opacity: 50%;
@@ -179,10 +189,6 @@
     grid-template-columns: 1fr; /* Single column layout */
   }
 
-  .customDiv {
-    display: none; /* Hide the image column */
-  }
-
   .name, .title {
     display: block; /* Change to block for proper alignment */
     margin: 0; /* Remove any default margins */
@@ -193,11 +199,11 @@
     margin-top: 0.5rem; /* Add a bit of space between name and title */
   }
 
-  .info, .projects, .more {
+  .info, .projects, .work {
     grid-column: 1 / -1; /* Span the entire column */
   }
 
-  .info, .projects, .more {
+  .info, .projects, .work {
     margin-top: 3rem; /* Add margin to the top of each item */
   }
 }

@@ -33,8 +33,8 @@ const ProjectClient = ({ project, projects }) => {
                 <p>{project.client}</p>
               </div>
               <div className={styles.item}>
-                <h3>Role:</h3>
-                <p>{project.role}</p>
+                <h3>Technologies:</h3>
+                <p>{project.technologies}</p>
               </div>
               <div className={styles.item}>
                 <h3>Year:</h3>
