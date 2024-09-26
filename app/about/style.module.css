@@ -25,7 +25,7 @@
 
   .left .image {
     max-width: 100%; /* Limit image to its container width */
-    max-height: 75vh; /* Limit image to its container height */
+    max-height: 50vh; /* Limit image to its container height */
     width: auto; /* Allow width to adjust proportionally */
     height: auto; /* Maintain aspect ratio */
     object-fit: cover; /* Maintain aspect ratio and cover the container */
