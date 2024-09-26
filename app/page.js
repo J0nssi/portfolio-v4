@@ -9,7 +9,7 @@ export default function Home() {
     <main className={styles.main}>
       <div className={styles.info}>
         <p className={styles.header}>Info</p>
-        <p>Hello, I&apos;m Joonas, a Finnish software engineer living in Helsinki. I'm solving the technical demands with TypeScript, C# and Python.</p>
+        <p>Hello, I&apos;m Joonas, a Finnish software engineer living in Helsinki. I&apos;m solving the technical demands with TypeScript, C# and Python.</p>
         <div className={styles.social}>
         <a href="mailto:joonas.vaija@hotmail.com">
             <div className={styles.project}>
